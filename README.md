@@ -1,35 +1,38 @@
-# Disease_prediction_system
-# Disease Prediction System â€” Week 1: Project Planning & Dataset Scoping
+# Disease Prediction System â€” Week 2: Data Cleaning & Transformation
 
-Week 1 deliverable for the **Virtual Data Science Apprentice â€“ Python Specialist Intern** program (NSDC YuvaIntern). This week establishes the project plan for a Python-based Disease Prediction System.
+Week 2 deliverable for the **Virtual Data Science Apprentice â€“ Python Specialist Intern** program (NSDC YuvaIntern). This week documents the data cleaning and transformation strategy for the UCI Heart Disease dataset.
 
 > âš ï¸ **Disclaimer:** Educational/portfolio project only â€” not a medical diagnostic tool.
 
 ## Objective
-Design a project proposal covering objectives, scope, candidate public datasets, and a high-level analytical workflow for predicting heart disease risk from clinical data.
+Document a Python-based plan for handling missing values, duplicates, outliers, and feature transformation to produce an analysis-ready dataset.
 
 ## Contents
 ```
-week1-planning/
-â”œâ”€â”€ Week1_Project_Planning_Dataset_Scoping.docx   # Full project proposal
+week2-data-cleaning/
+â”œâ”€â”€ Week2_Data_Cleaning_Transformation.docx   # Full cleaning & transformation plan
 â””â”€â”€ README.md
 ```
 
 ## What's in the Report
-- Project objectives and scope
-- Problem statement (binary classification of heart disease risk)
-- Comparison of candidate public datasets (UCI Heart Disease, Pima Indians Diabetes, Framingham Heart Study)
-- Selected dataset and rationale: **UCI Heart Disease Dataset (Cleveland subset)**
-- High-level 4-week workflow: acquisition â†’ cleaning â†’ EDA â†’ modelling
-- Planned Python tools: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
-- Anticipated challenges and mitigation strategies
-- Timeline with weekly checkpoints
+- Data quality profiling approach (nulls, sentinel placeholder values, duplicates, invalid ranges)
+- Missing value strategy: median/mode imputation, `KNNImputer`, row removal thresholds
+- Duplicate detection and removal (`pandas.drop_duplicates`)
+- Outlier detection: IQR method, z-score method, box-plot confirmation
+- Encoding plan: label encoding (binary fields) and one-hot encoding (nominal fields)
+- Feature scaling: `StandardScaler`, applied strictly after the train/test split to avoid leakage
+- Two proposed engineered features (age-group bucket, cholesterol Ã— blood pressure interaction)
+- An 8-step repeatable cleaning pipeline
+- Risk table covering leakage prevention and over-aggressive outlier removal
 
-## Dataset
-[UCI Heart Disease Dataset](https://archive.ics.uci.edu/dataset/45/heart+disease) â€” 13â€“14 clinical features (age, sex, chest pain type, resting blood pressure, cholesterol, fasting blood sugar, resting ECG, max heart rate, exercise-induced angina, etc.) with a binary disease-presence target.
+## Tools
+`pandas`, `numpy`, `scikit-learn` (`KNNImputer`, `StandardScaler`, `OneHotEncoder`)
+
+## Depends On
+Week 1 project plan and dataset selection.
 
 ## Next Step
-Week 2 will use this plan to clean and transform the selected dataset into an analysis-ready form.
+Week 3 will use the cleaned dataset for exploratory data analysis and visualization.
 
 ## Author
 [Your Name] â€” Virtual Data Science Apprentice, NSDC YuvaIntern
